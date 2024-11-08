@@ -124,9 +124,50 @@ button:hover {
     position: relative;
 }
 
-.car-card:hover {
-    box-shadow: 0 0 30px rgba(228, 155, 73, 0.2);
+/* Estilos generales de .car-card */
+.car-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    /* Ancho y otros estilos iniciales */
+    width: 100%;
+    max-width: 400px; /* Tamaño máximo en pantallas grandes */
+    margin: 10px auto;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    overflow: hidden;
 }
+
+/* Efecto hover en cualquier dispositivo */
+.car-card:hover {
+    box-shadow: 0 0 30px rgba(228, 155, 73, 0.4);
+    background-color: orange;
+    transform: scale(1.05);
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+    .car-card {
+        width: 90%; /* Ajuste para que ocupe casi toda la pantalla en móviles */
+        padding: 15px; /* Espaciado reducido para pantallas más pequeñas */
+    }
+
+    .car-card:hover {
+        transform: scale(1.02); /* Efecto de zoom más sutil en pantallas pequeñas */
+    }
+}
+
+/* Ajustes adicionales para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .car-card {
+        padding: 10px;
+        width: 95%; /* Más ancho en pantallas muy pequeñas */
+    }
+    
+    .car-card:hover {
+        transform: scale(1.01); /* Zoom aún más sutil en pantallas extra pequeñas */
+    }
+}
+
 
 .car-image {
     max-width: 100%;
